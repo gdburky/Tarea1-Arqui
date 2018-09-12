@@ -15,7 +15,7 @@
     {% csrf_token %}
     <label for="mensaje">Ingrese mensaje: </label>
     <input id="mensaje" type="text" name="messege">
-    <input type="hidden" id="client_ip" name="client_ip" value="{{ client_ip }}">
+    <input type="hidden" id="client_ip" name="client_ip" value="{{ ip_client }}">
     <input type="hidden" id="pub_date" name="pub_date" value="{{ time }}">
     <input type="submit" value="OK">
 </form>
