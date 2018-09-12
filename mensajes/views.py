@@ -6,10 +6,7 @@ from .models import Messege
 
 def index(request):
     messege_list = Messege.objects.order_by('-pub_date')
-    if request.META.get('HTTP_X_FORWARDED_FOR') != '' :
-        ip_client = request.META.get('HTTP_X_FORWARDED_FOR')
-    else:
-        ip_client = request.META.get('REMOTE_ADDR')
+    ip_client = request.META.get('REMOTE_ADDR')
 
     now = datetime.datetime.now()
     context = {
