@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'bhmzq+$r!g6wr6(^(c$xs02_8wyo+m@o0623a_py&%y2rr(era'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['charette3.ing.puc.cl', 'localhost']
 
@@ -31,6 +31,7 @@ ALLOWED_HOSTS = ['charette3.ing.puc.cl', 'localhost']
 # Application definition
 
 INSTALLED_APPS = [
+    'mensajes.apps.MensajesConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

@@ -1,0 +1,21 @@
+<h1> Mensajes: </h1>
+{% if messege_list %}
+    <ul>
+    {% for mensaje in messege_list %}
+        <p> Mensaje: {{ mensaje.messege }}<p>
+        <p> IP del cliente: {{ mensaje.client_ip }} - {{ mensaje.pub_date }} </p>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No hay mensajes.</p>
+{% endif %}
+<br><br><br>
+
+<form action="new/" method="post">
+    {% csrf_token %}
+    <label for="mensaje">Ingrese mensaje: </label>
+    <input id="mensaje" type="text" name="messege">
+    <input type="hidden" id="client_ip" name="client_ip" value="{{ client_ip }}">
+    <input type="hidden" id="pub_date" name="pub_date" value="{{ time }}">
+    <input type="submit" value="OK">
+</form>
